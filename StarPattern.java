@@ -11,15 +11,55 @@ public class StarPattern {
 //		printNumberSequence(input);
 //		printNumberSequenceReverse(input);
 //		printIndexPosition(input);
-//		printNumberVertically(5);
-		printNumberVerticallyReverse(5);
+//		printNumberVertically(input);
+//		printNumberVerticallyReverse(5);
 //		printNumberVerticallyInPath(input);
+		printNumberVerticallyInPathReverse(5);
 		
 		
 	}
 
+	public static void printNumberVerticallyInPathReverse(int input)
+	{
+		int posEven=0;
+		int posOdd=0;
+		
+		for(int row = input; row > 0; row--)
+		{
+			posOdd = row;
+			posEven = input - row + 1;
+			
+			for(int col = input; col>0; col--)
+			{
+				if(col%2 == 0) //even
+				{ 
+					System.out.print(posEven+" ");
+				}
+				else
+				{
+					System.out.print(posOdd+" ");
+				}
+				
+				posEven += input;
+				posOdd += input;
+			}
+			System.out.println();
+		}
+	}
+	
+	
+	
 	public static void printNumberVerticallyReverse(int input)
 	{
+		/*
+		
+			5 10 15 20 25 
+			4 9 14 19 24 
+			3 8 13 18 23 
+			2 7 12 17 22 
+			1 6 11 16 21 
+		
+		*/
 		int num = input;
 		
 		for(int row=input; row>0; row--)
